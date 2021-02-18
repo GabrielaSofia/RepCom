@@ -1,6 +1,7 @@
 @extends('layouts.master')
  
 @section('content')
+	
 	<body style="background-color: #041424;">
 	<div class="row">      
 		@foreach( $arrayReparaciones as $key => $reparacion )       

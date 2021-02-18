@@ -33,6 +33,7 @@ Route:: group(['middleware' => 'auth'], function(){
     Route::get('catalog/show/{id}',[CatalogController::class,'getShow']);
     Route::get('catalog/create', [CatalogController::class,'getCreate']);
     Route::get('catalog/edit/{id}',[CatalogController::class,'getEdit']);
+    Route::get('catalog/delete/{id}', [CatalogController::class,'getDelete']);
 
     
     Route::post('catalog/create', [CatalogController::class,'postCreate']);

@@ -12,31 +12,32 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item {{ Request::is('catalog') && ! Request::is('catalog/create')? 'active' : ''}}">
                         <a class="nav-link text-white" href="{{url('/catalog')}}">
-                            <span class="glyphicon glyphicon-film" aria-hidden="true">&#128196</span>
+                        <i class="fas fa-align-justify"></i>
                             Catálogo
                         </a>
                     </li>
                     <li class="nav-item {{  Request::is('catalog/create') ? 'active' : ''}}">
                         <a class="nav-link text-white" href="{{url('/catalog/create')}}">
-                            <span>&#10010</span> Añadir Reparación
+                        <i class="fa fa-plus-square"></i>
+                        Agregar
                         </a>
                     </li>
                     <li class="nav-item {{  Request::is('catalog/search/') ? 'active' : ''}}">
                         <form class="d-flex" action='' method="POST" >
                             {{ csrf_field() }}
-                            <input type="text" name ='id_cli' id='id_cli' class="form-control me-2" style="width:200px; height:30px; margin-top:5px; " placeholder="Identificación del Cliente" >
-                            <button type="submit" class="btn bg-info text-white" style="height:30px; margin-top:5px; padding-top:2px;" >Buscar</button>
+                            <input type="text" name ='id_cli' id='id_cli' class="form-control me-2" style="width:200px; height:25px; margin-top:8px; padding-top:0px; " placeholder="Identificación del Cliente" >
+                            <button type="submit" class="btn text-white" style="background-color:#04384e; height:25px;" >
+                            <i class="fab fa-sistrix" ></i></button>
                         </form>
-                    </li>
-                    
+                    </li>           
                 </ul>
 
                 <ul class="navbar-nav navbar-right">
-                    <li class="nav-item">
+                                        <li class="nav-item">
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline">
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-link nav-link text-white" style="display:inline;cursor:pointer"><span>&#215</span>
-                                Cerrar sesión
+                            <button type="submit" class="btn btn-link nav-link text-white" style="display:inline;cursor:pointer;">
+                            <i class="fa fa-sign-out" style="font-size: 20px;" ></i> Cerrar Sesión
                             </button>
                         </form>
                     </li>

@@ -24,8 +24,10 @@
 				<td><b>Fecha de Salida:</b>{{$reparacion->fecha_sal}}</td>
 			</tr>
 				<td colspan="3" style="text-align: center;">
-				<a href="{{ url('/catalog') }}" style="width: 200px;" class="btn btn-danger"><i class="fas fa-angle-left"></i> Volver al listado</a>
-				<a href="{{ url('/catalog/edit/' . $reparacion->id ) }}" style="width: 200px;" class="btn btn btn-info"><i class="fas fa-pencil-alt"></i> Editar Reparación</a></td>
+				<a href="{{ url('/catalog') }}" style="width: 170px;" class="btn btn-info"><i class="fa fa-angle-left"></i> Volver al listado</a>
+				<a href="{{ url('/catalog/edit/' . $reparacion->id ) }}" style="width: 130px;" class="btn  btn-warning"><i class="fa fa-edit"></i> Editar</a>
+				<a href="{{ url('/catalog/delete/' . $reparacion->id ) }}" style="width: 130px;" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</a>
+				<a href="{{ url('/catalog/edit/' . $reparacion->id ) }}" style="width: 170px;" class="btn btn-dark"><i class="fas fa-file-download"></i> Generar Factura</a></td>
 			</tr>
 		</table>
 	</body>     

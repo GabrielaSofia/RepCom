@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reparacion;
+//use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use League\CommonMark\Extension\Table\Table;
 
 class CatalogController extends Controller
@@ -26,6 +28,12 @@ class CatalogController extends Controller
     public function getEdit($id){
         $reparacion = Reparacion::findOrFail($id);
         return view('catalog.edit', array('reparacion'=>$reparacion));
+    }
+
+    public function getDelete($id){
+        $reparacion = Reparacion::findOrFail($id);
+        $reparacion->delete();
+        return redirect('/');
     }
 
 
