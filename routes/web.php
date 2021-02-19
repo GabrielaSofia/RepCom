@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
-use App\Http\Controllers\PDFController;
+use App\Http\Controllers\ClientesController;
 
 use Illuminate\Support\Facades\Auth;
 /*
@@ -30,6 +30,7 @@ Route::get('logout', function () {
 });*/
 
 Route:: group(['middleware' => 'auth'], function(){
+    //-------------------------CATALOG----------------------------------------
     Route::get('catalog', [CatalogController::class,'getIndex']);
     Route::get('catalog/show/{id}',[CatalogController::class,'getShow']);
     Route::get('catalog/create', [CatalogController::class,'getCreate']);
@@ -37,10 +38,20 @@ Route:: group(['middleware' => 'auth'], function(){
     Route::get('catalog/delete/{id}', [CatalogController::class,'getDelete']);
     Route::get('catalog/download/{id}', [CatalogController::class, 'PDF']);
 
-    
     Route::post('catalog/create', [CatalogController::class,'postCreate']);
     Route::post('catalog/edit/{id}',[CatalogController::class,'putEdit']);
     Route::post('catalog', [CatalogController::class,'postIndex']);
+
+    //-------------------------CLIENTES----------------------------------------
+
+    Route::get('clientes', [ClientesController::class,'getIndex']);
+    Route::get('clientes/create', [ClientesController::class,'getCreate']);
+    Route::get('clientes/edit/{id}',[ClientesController::class,'getEdit']);
+    Route::get('clientes/delete/{id}', [ClientesController::class,'getDelete']);
+
+    Route::post('clientes/create', [ClientesController::class,'postCreate']);
+    Route::post('clientes/edit/{id}',[ClientesController::class,'putEdit']);
+
 });
 //--------------------------------------------------------
 

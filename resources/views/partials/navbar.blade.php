@@ -16,10 +16,16 @@
                             Catálogo
                         </a>
                     </li>
+                    <li class="nav-item {{ Request::is('catalog') && ! Request::is('clientes/create')? 'active' : ''}}">
+                        <a class="nav-link text-white" href="{{url('/clientes')}}">
+                        <i class="fas fa-user-friends"></i>
+                            Clientes
+                        </a>
+                    </li>
                     <li class="nav-item {{  Request::is('catalog/create') ? 'active' : ''}}">
                         <a class="nav-link text-white" href="{{url('/catalog/create')}}">
                         <i class="fa fa-plus-square"></i>
-                        Agregar
+                        Agregar Reparación
                         </a>
                     </li>
                     <li class="nav-item {{  Request::is('catalog/search/') ? 'active' : ''}}">

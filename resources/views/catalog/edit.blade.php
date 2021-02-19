@@ -9,7 +9,7 @@
 				<tr>
 					<td class="input-group">
 						<span class='input-group-text'><b>Identificación del Cliente:</b></span>
-						<input type="text" name="id_cliente" id="id_cliente" class="form-control" value="{{ $reparacion->id_cliente }}" style="width: 300px;">
+						<input type="text" name="id_cliente" id="id_cliente" class="form-control" value="{{ $reparacion->id_cliente }}">
 						<span class='input-group-text'><b>Serial:</b></span>
 						<input type="text" name="serial" id="serial" value="{{ $reparacion->serial }}" class="form-control">
 						<span class='input-group-text'><b>Marca - Linea:</b></span>
@@ -36,21 +36,27 @@
 							<option value="EN">Entregado.</option>
 						</select>
 						<span class='input-group-text'><b>Precio:</b></span>
+						<span class="input-group-text">$</span>
 						<input type="number" name="precio" id="precio" value="{{$reparacion->precio}}" class="form-control">
-						<span class="input-group-text">$</span></td>
+						<span class="input-group-text">.00</span></td>
 				</tr>
 				<tr>
 					<td class="input-group">
 						<span class='input-group-text'><b>Observaciones:</b></span>
-						<textarea name="observaciones" id="observaciones" value="{{$reparacion->observaciones}}" class="form-control" rows="2"></textarea>
+						<input type="text" name="observaciones" id="observaciones" value="{{$reparacion->observaciones}}" class="form-control" /></td>
+				</tr>
+				<tr>
+					<td td class="input-group">
 						<span class='input-group-text'><b>Descripción del Problema:</b></span>
-						<textarea name="desc_problema" id="desc_problema" value="{{$reparacion->desc_problema}}" class="form-control" rows="2"></textarea></td>
+						<input type="text" name="desc_problema" id="desc_problema" value="{{$reparacion->desc_problema}}" class="form-control"/></td>
 				</tr>
 				<tr>
 					<td colspan="2">
-					<button type="submit" class="btn btn-info" style="width: 180px;" >
+						<a href="{{ url('/catalog') }}" style="width: 170px;" class="btn btn-info"><i class="fa fa-angle-left"></i> Volver al listado</a>
+						<button type="submit" class="btn btn-success" style="width: 180px;" >
+						<i class="fas fa-edit"></i>	
 						Modificar
-					</button></td>
+						</button></td>
 				</tr>
 			</table>
 		</form>

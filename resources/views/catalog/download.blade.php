@@ -4,31 +4,34 @@
 	<meta charset="UTF-8">
 	<title>Reporte Reparación</title>
 	<style>
-		.page-break {
-    		page-break-after: always;
-		}
 		table{
 			margin: auto;
 			text-align: center;
-			border: 1px solid #000;
+			border: 1px solid #fff;
 			border-collapse: collapse;
 			margin-top: 10px;
 		}
 		.header{
 			margin: auto;
 			text-align: center;
-			border: 1px solid #fff;
+			font-family: Arial;
+			border: 1px solid white;
 			border-collapse: collapse;
+			background-color: #04384e;
+			color: white;
 		}
 		td{
 			width: 300px;
 			text-align: left;
-			padding: 0.3em;
+			padding: 0.2em;
 		}
 		th{
-			width: 300px;
+			width: 200px;
 			text-align: center;
-			padding: 0.3em;
+			padding: 0.2em;
+			background-color: #041424;
+			color: white;
+			text-align: left;
 		}
 		#icono{
 			width: 70px;
@@ -38,18 +41,6 @@
 			padding:0%;
 			margin: 0%;
 			font-size: 10px;
-		}
-		#button {
- 			padding: 0;
- 		}
-		#button li {
-			display: inline;
-			font-family: Arial;
-			font-size: 11px;
-			width: 590px;
-			text-decoration: none;
-			float: left;
-			padding: 10px;
 		}
 		div{
 			margin-top: 20px;
@@ -61,15 +52,21 @@
 			width: 520px;
 			text-align: center;
 		}
+		img{
+			width: 250px;
+		}
+		.tdColor{
+			background-color: #E6EFEF;
+		}
 	</style>
 </head>
 <body>
 	<header>
 		<table  class="header">
 			<tr>
-				<td class="header-td"><img  id="icono" src="https://www.udenar.edu.co/recursos/wp-content/uploads/2017/02/escudo400X400-300x300.jpg" alt=""></td>
+				<td class="header-td"><img  id="icono" src="https://www.udenar.edu.co/recursos/wp-content/uploads/2016/09/vertical.fw_-e1476916579853.png" alt=""></td>
 				<td>
-					<h2 class="heater-td-center" >Reporte Reparación</h2>
+					<h2 class="heater-td-center" >Reporte Reparación #{{$reparacion->id}}</h2>
 				</td>
 				<td class="header-td">
 					<img id="icono" src="https://www.tecnica3mdp.edu.ar/imagenes/informatica/img22.png" alt="">
@@ -78,18 +75,18 @@
 		</table>
 			</header>
 	<div>
-		<table border="2" >
+		<table border="1" >
 			<tr>
-				<th scope="row">Marca</th>
-				<td><h3><b>{{$reparacion->marca_linea}}<b></h3></td>
+				<th scope="row">Marca del Computador</th>
+				<td class="tdColor"><h3><b>{{$reparacion->marca_linea}}<b></h3></td>
 			</tr>
 			<tr>
-				<th scope="row">Fotografía</th>
-				<td><img src="{{$reparacion->imagen}}"/></td>
+				<th scope="row">Fotografía de Computador</th>
+				<td style="text-align: center;"><img src="{{$reparacion->imagen}}"/></td>
 			</tr>
 			<tr>
-				<th scope="row">Serial</th>
-				<td>{{$reparacion->serial}}</td>
+				<th scope="row">Serial del Computador</th>
+				<td class="tdColor">{{$reparacion->serial}}</td>
 			</tr>
 			<tr>
 				<th scope="row">Identificación del Cliente</th>
@@ -97,7 +94,7 @@
 			</tr>
 			<tr>
 				<th scope="row">Identificación del Empleado</th>
-				<td>{{$reparacion->id_empleado}}</td>
+				<td class="tdColor">{{$reparacion->id_empleado}}</td>
 			</tr>
 			<tr>
 				<th scope="row">Fecha de Ingreso</th>
@@ -105,23 +102,23 @@
 			</tr>
 			<tr>
 				<th scope="row">Observaciones</th>
-				<td><p>{{$reparacion->observaciones}}</p></td>
+				<td class="tdColor"><p>{{$reparacion->observaciones}}</p></td>
 			</tr>
 			<tr>
-				<th scope="row">Estado</th>
+				<th scope="row">Estado de la reparación</th>
 				<td>{{$reparacion->estado}}</td>
 			</tr>
 			<tr>
 				<th scope="row">Descripción del Problema</th>
-				<td><p>{{$reparacion->desc_problema}}</p></td>
+				<td class="tdColor"><p>{{$reparacion->desc_problema}}</p></td>
 			</tr>
 			<tr>
 				<th scope="row">Fecha de Salida</th>
 				<td>{{$reparacion->fecha_sal}}</td>
 			</tr>
 			<tr>
-				<th scope="row">Precio</th>
-				<td>${{$reparacion->precio}}.00</td>
+				<th scope="row">Precio de la reparación</th>
+				<td class="tdColor">${{$reparacion->precio}}.00</td>
 			</tr>
 		</table>
 	</div>

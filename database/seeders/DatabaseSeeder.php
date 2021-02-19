@@ -2,12 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\Client;
 use App\Models\Reparacion;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
+    //-------------------------------------------------------------
     private $arrayReparaciones = array(
         array(
             'id_cliente' => '30723058',
@@ -75,6 +77,50 @@ class DatabaseSeeder extends Seeder
             'id_empleado' => '2',
         )
     );
+    //-------------------------------------------------------------
+    private $arrayClientes = array(
+        array(
+            'id_cliente' => '30723058',
+            'nom_cliente' => 'Marleny', 
+            'ape_cliente' => 'Juajinoy España', 
+            'tel_cliente' => '3206692168', 
+            'email_cliente' => 'marleny@gmail.com', 
+            'dir_cliente' => 'Carrera 1 #9-62',
+        ),
+        array(
+            'id_cliente' => '12981540',
+            'nom_cliente' => 'Juan', 
+            'ape_cliente' => 'Calpa Delgado', 
+            'tel_cliente' => '3128422316', 
+            'email_cliente' => 'juandelgado@gmail.com', 
+            'dir_cliente' => 'Carrera 23a #5-14',
+        ),
+        array(
+            'id_cliente' => '1085123587',
+            'nom_cliente' => 'Luis', 
+            'ape_cliente' => 'Martinez Agreda', 
+            'tel_cliente' => '3215345123', 
+            'email_cliente' => 'luis@gmail.com', 
+            'dir_cliente' => 'Carrera 14d #12-3',
+        ),
+        array(
+            'id_cliente' => '1086543678',
+            'nom_cliente' => 'Fernando', 
+            'ape_cliente' => 'Diaz Benavides', 
+            'tel_cliente' => '3172346412', 
+            'email_cliente' => 'fernandob@gmail.com', 
+            'dir_cliente' => 'Calle 12a #2-11',
+        ),
+        array(
+            'id_cliente' => '1087234697',
+            'nom_cliente' => 'Salomé', 
+            'ape_cliente' => 'Goyes Paredes', 
+            'tel_cliente' => '3183821342', 
+            'email_cliente' => 'salomeg@gmail.com', 
+            'dir_cliente' => 'Carrera 16b #8-25',
+        ),
+    );
+    //-------------------------------------------------------------
     private function seedCatalog(){
         DB::table('reparacions')->delete();
 
@@ -93,18 +139,33 @@ class DatabaseSeeder extends Seeder
             $r->id_empleado= $reparacion['id_empleado']; 
             $r->save();
         }
-    }    
+    }
+    private function seedClientes(){
+        DB::table('clients')->delete();
+
+        foreach($this->arrayClientes as $cliente ){
+            $c = new Client();
+            $c->id_cliente= $cliente['id_cliente'];
+            $c->nom_cliente= $cliente['nom_cliente'];
+            $c->ape_cliente= $cliente['ape_cliente'];
+            $c->tel_cliente= $cliente['tel_cliente'];
+            $c->email_cliente= $cliente['email_cliente'];
+            $c->dir_cliente= $cliente['dir_cliente'];
+            $c->save();
+        }
+    }
     public function run()
     {
         // \App\Models\User::factory(10)->create();
         self::seedCatalog();
         self::seedUsers();
-        $this->command->info('Tabla catálogo inicializada con datos!');
+        self::seedClientes();
+        $this->command->info('Tabla catálogo y clientes inicializada con datos!');
         
     }
     public function seedUsers()
     {
-        /*DB::table('users')->insert([
+        DB::table('users')->insert([
             "name" =>"Gabriela",
             "email" => "gabrielasofia0519@gmail.com",
             "password" => bcrypt("gabriela")]);
@@ -119,6 +180,6 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             "name" =>"Cristhian",
             "email" => "cristhian@udenar.edu.co",
-            "password" => bcrypt("cristhian")]);*/
+            "password" => bcrypt("cristhian")]);
     }
 }

@@ -37,7 +37,6 @@ class CatalogController extends Controller
         return redirect('/');
     }
 
-
     public function postIndex(Request $request){
         $id_cliente = $request->input('id_cli');
         $id = Reparacion::where('id_cliente',$id_cliente)->get();
@@ -47,7 +46,7 @@ class CatalogController extends Controller
         return redirect('/catalog');
     }
 
-     public function PDF($id){
+    public function PDF($id){
         $reparacion = Reparacion::findOrFail($id);
         $pdf = \PDF::loadView('catalog.download',array('reparacion'=>$reparacion));
         
