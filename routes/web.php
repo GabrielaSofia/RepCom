@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\PDFController;
 
 use Illuminate\Support\Facades\Auth;
 /*
@@ -34,6 +35,7 @@ Route:: group(['middleware' => 'auth'], function(){
     Route::get('catalog/create', [CatalogController::class,'getCreate']);
     Route::get('catalog/edit/{id}',[CatalogController::class,'getEdit']);
     Route::get('catalog/delete/{id}', [CatalogController::class,'getDelete']);
+    Route::get('catalog/download/{id}', [CatalogController::class, 'PDF']);
 
     
     Route::post('catalog/create', [CatalogController::class,'postCreate']);

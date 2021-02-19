@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reparacion;
-//use Illuminate\Contracts\Session\Session;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use League\CommonMark\Extension\Table\Table;
+use Barryvdh\DomPDF\PDF;
+use Illuminate\Support\Facades\App;
 
 class CatalogController extends Controller
 {
@@ -44,6 +45,15 @@ class CatalogController extends Controller
             return view('catalog.search', ['arrayReparaciones' => $id]);
         }
         return redirect('/catalog');
+    }
+
+     public function PDF($id){
+        $reparacion = Reparacion::findOrFail($id);
+        $pdf = \PDF::loadView('catalog.download',array('reparacion'=>$reparacion));
+        
+        //$pdf = App::make('dompdf.wrapper');
+       // $pdf -> loadView('catalog.download');
+        return $pdf->stream();
     }
 
     public function postCreate(Request $request){
