@@ -25,7 +25,7 @@
                     <li class="nav-item {{  Request::is('catalog/search/') ? 'active' : ''}}">
                         <form class="d-flex" action='' method="POST" >
                             {{ csrf_field() }}
-                            <input type="text" name ='id_cli' id='id_cli' class="form-control me-2" style="width:200px; height:25px; margin-top:8px; padding-top:0px; " placeholder="Identificación del Cliente" >
+                            <input type="text" name ='id_cli' id='id_cli' class="form-control me-2" style="width:200px; height:25px; margin-top:8px; padding-top:0px; " placeholder="Buscar" >
                             <button type="submit" class="btn text-white" style="background-color:#04384e; height:25px;" >
                             <i class="fab fa-sistrix" ></i></button>
                         </form>
