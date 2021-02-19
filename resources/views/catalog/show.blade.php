@@ -1,9 +1,9 @@
 @extends('layouts.master')
 	@section('content')   
 	<body style="background-color: #041424;">
-		<table class=' table table-light table-striped' style="border-radius: 10px; margin-top: 10px; " >
+		<table class=' table table-light table-striped' style=" margin-top: 10px; " >
 			<tr>
-				<td rowspan="4" style="text-align: center;"><img src="{{$reparacion->imagen}}" style="height:300px; border-radius:20px;"/>  </td>
+				<td rowspan="4" style="text-align: center;"><img src="{{$reparacion->imagen}}" style="height:300px; border-radius:5px;"/>  </td>
 				<td colspan="2" style="text-align: center;"><h2><b>{{$reparacion->marca_linea}}<b></h2></td>
 			</tr>
 			<tr>

@@ -5,7 +5,7 @@
 	<body style="background-color: #041424;">
 	<div class="row" style="margin-top: 20px;">
 		<a class="btn btn-info" href="{{ url('/clientes/create/') }}"><i class="fa fa-user-plus"></i>  Agregar Cliente</a>
-		<table class="table table-light table-striped table-hover">
+		<table class="table table-light table-striped table-hover" style="margin-top: 10px;">
 			<tr>
 				<th>#</th>
 				<th>Identificación</th>

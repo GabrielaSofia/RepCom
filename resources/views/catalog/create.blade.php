@@ -4,7 +4,7 @@
 	<body style="background-color: #041424; ">
 		<form action='#' method="POST" style="margin-top: 10px;">
 			{{csrf_field()}}
-			<table class="table table-light table-striped" style="text-align: center; border-radius:10px;">
+			<table class="table table-light table-striped" style="text-align: center;">
 				<th colspan="2"><h4>Nueva Reparación</h4></th>
 				<tr>
 					<td class="input-group">
@@ -48,8 +48,10 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-					<button type="submit" class="btn btn-info" style="width: 180px;" >
-						Añadir
+					<a href="{{ url('/catalog') }}" style="width: 170px;" class="btn btn-info"><i class="fa fa-angle-left"></i> Volver al listado</a>
+					<button type="submit" class="btn btn-success" style="width: 180px;" >
+					<i class="fa fa-plus-square"></i>	
+					Añadir
 					</button></td>
 				</tr>
 			</table>

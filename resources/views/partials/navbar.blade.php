@@ -22,12 +22,6 @@
                             Clientes
                         </a>
                     </li>
-                    <li class="nav-item {{  Request::is('catalog/create') ? 'active' : ''}}">
-                        <a class="nav-link text-white" href="{{url('/catalog/create')}}">
-                        <i class="fa fa-plus-square"></i>
-                        Agregar Reparación
-                        </a>
-                    </li>
                     <li class="nav-item {{  Request::is('catalog/search/') ? 'active' : ''}}">
                         <form class="d-flex" action='' method="POST" >
                             {{ csrf_field() }}

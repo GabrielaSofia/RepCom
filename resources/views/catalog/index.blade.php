@@ -2,11 +2,15 @@
  
 @section('content')
 	
-	<body style="background-color: #041424;">
-	<div class="row">      
+	<body style="background-color: #041424; ">
+	<div style="margin-top: 10px;">
+		<a class="btn btn-info" href="{{ url('/catalog/create/') }}"><i class="fa fa-plus-square"></i>  Agregar Reparación</a>      
+	</div>
+	<div class="row">
+	
 		@foreach( $arrayReparaciones as $key => $reparacion )       
 			<a style="color: #04384e;" href="{{ url('/catalog/show/' . $reparacion->id ) }}">
-				<table class="m-2" style="border-radius: 25px; padding:5px; background-color:white; text-align:center;">
+				<table class="m-2" style="border-radius: 5px; padding:5px; background-color:white; text-align:center;">
 					<tr>
 						<td ><img  class='py-3' src="{{$reparacion->imagen}}" style="height:200px;"/></td>
 					</tr>

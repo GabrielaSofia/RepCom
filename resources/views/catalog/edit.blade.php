@@ -4,7 +4,7 @@
 	<body style="background-color: #041424; ">
 		<form action='#' method="POST" style="margin-top: 10px;">
 			{{csrf_field()}}
-			<table class="table table-light table-striped" style="text-align: center; border-radius:10px;">
+			<table class="table table-light table-striped" style="text-align: center; ">
 				<th colspan="2"><h4>Modificar Reparación</h4></th>
 				<tr>
 					<td class="input-group">
